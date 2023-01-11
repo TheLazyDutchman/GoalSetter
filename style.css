@@ -1,9 +1,10 @@
 body {
 	background-color: #404040;
+	color: #f0f0f0;
 }
 
 li {
-	text-decoration: none;
+	list-style: none;
 }
 
 nav {
@@ -17,11 +18,17 @@ nav li {
 	border-right: 1px solid black;
 }
 
+nav li a {
+	color: #d0d0d0;
+	text-decoration: none;
+}
+
 nav li:last-child {
 	border: none;
 }
 
 .goal_item {
+	padding: 15px;
 	background-color: #505050;
 	border: 2px solid black;
 	border-radius: 15px;
