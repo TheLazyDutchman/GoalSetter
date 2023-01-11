@@ -1,0 +1,28 @@
+body {
+	background-color: #404040;
+}
+
+li {
+	text-decoration: none;
+}
+
+nav {
+	background-color: #303030;
+	border: 2px solid black;
+	border-radius: 15px;
+}
+
+nav li {
+	padding: 15px;
+	border-right: 1px solid black;
+}
+
+nav li:last-child {
+	border: none;
+}
+
+.goal_item {
+	background-color: #505050;
+	border: 2px solid black;
+	border-radius: 15px;
+}
