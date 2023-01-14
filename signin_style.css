@@ -24,10 +24,11 @@ body {
     font-size: 11px;
     padding-top: 10px;
     padding-bottom: 10px;
+    transition: color 100ms;
 }
 
 a:hover {
-    color: purple;
+    color: rgb(191, 87, 191);
 }
 
 .input {
@@ -52,6 +53,7 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
+    transition: opacity 100ms;
 }
 
 button:hover {
