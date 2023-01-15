@@ -18,16 +18,15 @@ body {
 }
 
  a {
-    align-self: center;
-    color: #f0f0f0;
-    font-size: 11px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+	text-decoration: none;
+	color: #BB86F7;
     transition: color 100ms;
 }
 
-a:hover {
-    color: rgb(191, 87, 191);
+.signUp {
+    align-self: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .input {
