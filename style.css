@@ -55,3 +55,26 @@ nav li:last-child {
 	text-decoration: none;
 	color: #BB86F7;
 }
+
+button {
+    background-color: #04AA6D;
+    color: #f0f0f0;
+    padding: 14px 20px;
+	text-align: center;
+    border: none;
+	border-radius: 10px;
+    cursor: pointer;
+    transition: opacity 100ms;
+	width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.Add_Button_Container {
+	margin: 7px;
+	border-radius: 15px;
+	margin-bottom: 30px;
+	margin-top: 20px;
+}
