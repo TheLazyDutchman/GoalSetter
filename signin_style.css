@@ -2,9 +2,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #121212;
     padding: 10px;
+    min-width: 500px;
+}
+
+.Main {
     display: flex;
     justify-content: center;
-    min-width: 500px;
 }
 .loginForm {
     color: #f0f0f0;
@@ -17,8 +20,6 @@ body {
     flex-direction: column;
     max-width: 500px;
 }
-
-
 
 a {
 	text-decoration: none;
@@ -46,6 +47,8 @@ input, textarea, select {
     border: 1px solid #f0f0f0;
     border-radius: 15px;
     box-sizing: border-box;
+    font-family: inherit;
+    max-width: 100%;
 }
 
 button {
@@ -71,12 +74,6 @@ button:active {
     border-bottom: 1px solid; 
     padding-bottom: 10px;
     margin-top: 50px;
-}
-
-textarea {
-    min-height: 100px;
-    font-family: inherit;
-    max-width: 100%;
 }
 
 .required>label::after {
