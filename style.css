@@ -55,3 +55,8 @@ nav li:last-child {
 	text-decoration: none;
 	color: #BB86F7;
 }
+
+.goal_edit .goal_properties {
+	display: grid;
+	margin: 15px;
+}
