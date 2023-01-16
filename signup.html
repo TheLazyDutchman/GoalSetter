@@ -17,21 +17,21 @@
             <div class="required">
                 <label for="Username"><b>Username</b></label>
                 <br>
-                <input class="input" type="text" id="Username" name="Username" placeholder="Enter Username"required>
+                <input type="text" id="Username" name="Username" placeholder="Enter Username"required>
                 <br><br>
             </div>
 
             <div class="required">
                 <label for="Password"><b>Password</b></label>
                 <br>
-                <input class="input" type="password" id="Password" name="Password" placeholder="Enter Password"required>
+                <input type="password" id="Password" name="Password" placeholder="Enter Password"required>
                 <br><br>
             </div>
 
             <div class="required">
                 <label for="RepeatPassword"><b>Repeat Password</b></label>
                 <br>
-                <input class="input" type="password" id="RepeatPassword" name="RepeatPassword" placeholder="Enter Password Again" required>
+                <input type="password" id="RepeatPassword" name="RepeatPassword" placeholder="Enter Password Again" required>
                 <br><br>
             </div>
 
@@ -40,33 +40,38 @@
             <div class="required">
                 <label for="Name"><b>Full Name</b></label>
                 <br>
-                <input class="input" type="text" name="Name" id="Name" placeholder="Enter Name" required>
+                <input type="text" name="Name" id="Name" placeholder="Enter Name" required>
                 <br><br>
             </div>
 
             <div class="required">
                 <label for="Gender"><b>Gender</b></label>
                 <br>
-                <select class="input" name="Gender" id="Gender" required>
-                    <option value="" selected disabled hidden>Select Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
-                </select>
-                <br><br>
+                <div class="Radio">
+                    <label for="Male">
+                        <input type="radio" name="Gender" id="Male" value="Male">Male
+                    </label>
+                    <label for="Female">
+                        <input type="radio" name="Gender" id="Female" value="Female">Female
+                    </label>
+                    <label for="Other">
+                        <input type="radio" name="Gender" id="Other" value="Other">Other
+                    </label>
+                </div>
+                <br>
             </div>
 
             <div class="required">
                 <label for="Email"><b>Email</b></label>
                 <br>
-                <input class="input" type="text" name="Email" id="Email" placeholder="you@example.com" required>
+                <input type="text" name="Email" id="Email" placeholder="you@example.com" required>
                 <br><br>
             </div>
 
             <div>
                 <label for="Bio"><b>Bio</b></label>
                 <br>
-                <textarea class="input" name="Bio" id="Bio" clos="50" rows="4" placeholder="Write something about youself..."></textarea>
+                <textarea name="Bio" id="Bio" clos="50" rows="4" placeholder="Write something about youself..."></textarea>
                 <br><br>
             </div>
 
@@ -75,21 +80,21 @@
             <div class="required">
                 <label for="Address"><b>Address</b></label>
                 <br>
-                <input class="input" type="text" name="Address" id="Address" placeholder="Street, House Number" required>
+                <input type="text" name="Address" id="Address" placeholder="Street, House Number" required>
                 <br><br>
             </div>
 
             <div class="required">
                 <label for="City"><b>City</b></label>
                 <br>
-                <input class="input" type="text" name="City" id="City" placeholder="Enter City" required>
+                <input type="text" name="City" id="City" placeholder="Enter City" required>
                 <br><br>
             </div>
 
             <div class="required">
                 <label for="Country"><b>Country</b></label>
                 <br>
-                <select class="input" name="Country", id="Country" required>
+                <select name="Country", id="Country" required>
                     <option value="" selected disabled hidden>Select Country</option>
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Albania">Albania</option>
@@ -337,7 +342,7 @@
             <div class="required">
                 <label for="ZIPcode"><b>ZIP code</b></label>
                 <br>
-                <input class="input" type="text" name="ZIPcode" id="ZIPcode" placeholder="Enter ZIP Code" required>
+                <input type="text" name="ZIPcode" id="ZIPcode" placeholder="Enter ZIP Code" required>
                 <br><br>
             </div>
 
@@ -345,7 +350,9 @@
             <small style="color: red;">*Required</small>
             <br>
 
-            <button style="margin-top: 50px;" type="submit">Confirm</button>
+            <div style="border-bottom: 1px solid #f0f0f0; margin-top: 30px; margin-bottom: 50px;"></div>
+
+            <button type="submit">Confirm</button>
 
         </form>
     </div>

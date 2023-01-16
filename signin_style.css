@@ -8,8 +8,8 @@ body {
 }
 .loginForm {
     color: #f0f0f0;
-    border: 3px solid rgb(0, 0, 0);
-    border-radius: 8px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 15px;
     background-color: #303030;
     padding: 10px;
     display: flex;
@@ -35,7 +35,7 @@ a:hover {
     padding-bottom: 10px;
 }
 
-.input {
+input, textarea, select {
     color-scheme: dark;
     color: #f0f0f0;
     background-color: #303030;
@@ -44,12 +44,13 @@ a:hover {
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #f0f0f0;
+    border-radius: 15px;
     box-sizing: border-box;
 }
 
 button {
     background-color: #04AA6D;
-    border-radius: 10px;
+    border-radius: 15px;
     color: #f0f0f0;
     padding: 14px 20px;
     border: none;
@@ -78,7 +79,7 @@ textarea {
     max-width: 100%;
 }
 
-.required label::after {
+.required>label::after {
     content: "*";
     color: red;
 }
@@ -87,3 +88,19 @@ textarea {
     border: 1px solid black;
     color: black;
 }
+
+.TextareaContainer {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.Radio {
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    width: auto;
+}
+
