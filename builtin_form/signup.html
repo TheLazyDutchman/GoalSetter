@@ -15,24 +15,25 @@
 
             <form action="signin.html">
                 <h2 class="subtitle">Login Info</h2>
+
                 <div class="required">
                     <label for="Username"><b>Username</b></label>
                     <br>
-                    <input type="text" id="Username" name="Username" placeholder="Enter Username"required>
+                    <input type="text" id="Username" name="Username" placeholder="Enter Username" minlength="5" maxlength="12" required>
                     <br><br>
                 </div>
 
                 <div class="required">
                     <label for="Password"><b>Password</b></label>
                     <br>
-                    <input type="password" id="Password" name="Password" placeholder="Enter Password"required>
+                    <input type="password" id="Password" name="Password" placeholder="Enter Password" minlength="14" required>
                     <br><br>
                 </div>
 
                 <div class="required">
                     <label for="RepeatPassword"><b>Repeat Password</b></label>
                     <br>
-                    <input type="password" id="RepeatPassword" name="RepeatPassword" placeholder="Enter Password Again" required>
+                    <input type="password" id="RepeatPassword" name="RepeatPassword" placeholder="Enter Password Again" minlength="14" required>
                     <br><br>
                 </div>
 
@@ -50,13 +51,16 @@
                     <br>
                     <div class="Radio">
                         <label for="Male">
-                            <input type="radio" name="Gender" id="Male" value="Male">Male
+                            <input type="radio" name="Gender" id="Male" value="Male" required>
+                            Male
                         </label>
                         <label for="Female">
-                            <input type="radio" name="Gender" id="Female" value="Female">Female
+                            <input type="radio" name="Gender" id="Female" value="Female">
+                            Female
                         </label>
                         <label for="Other">
-                            <input type="radio" name="Gender" id="Other" value="Other">Other
+                            <input type="radio" name="Gender" id="Other" value="Other">
+                            Other
                         </label>
                     </div>
                     <br>
@@ -65,7 +69,7 @@
                 <div class="required">
                     <label for="Email"><b>Email</b></label>
                     <br>
-                    <input type="text" name="Email" id="Email" placeholder="you@example.com" required>
+                    <input type="email" name="Email" id="Email" placeholder="you@example.com" required>
                     <br><br>
                 </div>
 
@@ -78,17 +82,17 @@
 
                 <h2 class="subtitle">Address</h2>
 
-                <div class="required">
+                <div>
                     <label for="Address"><b>Address</b></label>
                     <br>
-                    <input type="text" name="Address" id="Address" placeholder="Street, House Number" required>
+                    <input type="text" name="Address" id="Address" placeholder="Street, House Number">
                     <br><br>
                 </div>
 
-                <div class="required">
+                <div>
                     <label for="City"><b>City</b></label>
                     <br>
-                    <input type="text" name="City" id="City" placeholder="Enter City" required>
+                    <input type="text" name="City" id="City" placeholder="Enter City">
                     <br><br>
                 </div>
 
@@ -340,10 +344,10 @@
                     <br><br>
                 </div>
                 
-                <div class="required">
+                <div>
                     <label for="ZIPcode"><b>ZIP code</b></label>
                     <br>
-                    <input type="text" name="ZIPcode" id="ZIPcode" placeholder="Enter ZIP Code" required>
+                    <input type="text" name="ZIPcode" id="ZIPcode" placeholder="Enter ZIP Code" minlength="6" maxlength="6">
                     <br><br>
                 </div>
 
