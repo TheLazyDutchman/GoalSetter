@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="Main">
+        <div class="loginForm">
+            <center><h1>New Goal</h1></center>
+
+            <form action="index.html">
+                <div class="required">
+                    <label for="GoalName"><b>Goal Name</b></label>
+                    <br>
+                    <input type="text" id="GoalName" name="GoalName" placeholder="Enter Goal Name"required>
+                    <br><br>
+                </div>
+
+                <div>
+                    <div class="TextareaContainer">
+                        <label for="Desc"><b>SMART Description</b></label>
+                        <a href="https://en.wikipedia.org/wiki/SMART_criteria"><small>SMART?</small></a>
+                    </div>
+                    <br>
+                    <textarea name="Desc" id="Desc" clos="50" rows="9">Specific - &#13;&#10;&#13;&#10;Measurable - &#13;&#10;&#13;&#10;Achievable - &#13;&#10;&#13;&#10;Relevant - &#13;&#10;&#13;&#10;Timed - </textarea>
+                    <br><br>
+                </div>
+
+                <div class="required">
+                    <label for="Date"><b>Due Date</b></label>
+                    <br>
+                    <input type="date" id="Date" name="Date" required>
+                    <br><br>
+                </div>
+
+                <br>
+                <small style="color: red;">*Required</small>
+                <br>
+
+                <div class="separator"></div>
+
+                <button type="submit">Confirm</button>
+
+            </form>
+
+            <button class="Cancel_button" onclick="location.href='index.html'">Cancel</button>
+        </div>
+    </div>
+</body>
+</html>
