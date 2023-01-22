@@ -7,32 +7,46 @@
     <title>Sign Up</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <script>
+        function validate() {
+            //Username:
+            let Username = document.getElementsByName("Username").value;
+            let Password = document.getElementsByName("Password").value;
+            let RepeatPassword = document.getElementsByName("RepeatPassword").value;
+            let Name = document.getElementsByName("Name").value;
+            let Gender = document.getElementsByName("Gender").value;
+            let Email = document.getElementsByName("Email").value;
+            let RepeatPassword = document.getElementsByName("RepeatPassword").value;
+            let RepeatPassword = document.getElementsByName("RepeatPassword").value;
+        }
+    </script>
 </head>
 <body>
     <div class="Main">
         <div class="loginForm">
             <center><h1>Sign Up</h1></center>
 
-            <form action="signin.html">
+            <form action="signin.html" >
                 <h2 class="subtitle">Login Info</h2>
                 <div class="required">
                     <label for="Username"><b>Username</b></label>
                     <br>
-                    <input type="text" id="Username" name="Username" placeholder="Enter Username"required>
+                    <input type="text" id="Username" name="Username" placeholder="Enter Username">
                     <br><br>
                 </div>
 
                 <div class="required">
                     <label for="Password"><b>Password</b></label>
                     <br>
-                    <input type="password" id="Password" name="Password" placeholder="Enter Password"required>
+                    <input type="password" id="Password" name="Password" placeholder="Enter Password">
                     <br><br>
                 </div>
 
                 <div class="required">
                     <label for="RepeatPassword"><b>Repeat Password</b></label>
                     <br>
-                    <input type="password" id="RepeatPassword" name="RepeatPassword" placeholder="Enter Password Again" required>
+                    <input type="password" id="RepeatPassword" name="RepeatPassword" placeholder="Enter Password Again" >
                     <br><br>
                 </div>
 
@@ -41,7 +55,7 @@
                 <div class="required">
                     <label for="Name"><b>Full Name</b></label>
                     <br>
-                    <input type="text" name="Name" id="Name" placeholder="Enter Name" required>
+                    <input type="text" name="Name" id="Name" placeholder="Enter Name" >
                     <br><br>
                 </div>
 
@@ -65,7 +79,7 @@
                 <div class="required">
                     <label for="Email"><b>Email</b></label>
                     <br>
-                    <input type="text" name="Email" id="Email" placeholder="you@example.com" required>
+                    <input type="text" name="Email" id="Email" placeholder="you@example.com" >
                     <br><br>
                 </div>
 
@@ -78,24 +92,24 @@
 
                 <h2 class="subtitle">Address</h2>
 
-                <div class="required">
+                <div>
                     <label for="Address"><b>Address</b></label>
                     <br>
-                    <input type="text" name="Address" id="Address" placeholder="Street, House Number" required>
+                    <input type="text" name="Address" id="Address" placeholder="Street, House Number" >
                     <br><br>
                 </div>
 
-                <div class="required">
+                <div>
                     <label for="City"><b>City</b></label>
                     <br>
-                    <input type="text" name="City" id="City" placeholder="Enter City" required>
+                    <input type="text" name="City" id="City" placeholder="Enter City" >
                     <br><br>
                 </div>
 
                 <div class="required">
                     <label for="Country"><b>Country</b></label>
                     <br>
-                    <select name="Country", id="Country" required>
+                    <select name="Country", id="Country">
                         <option value="" selected disabled hidden>Select Country</option>
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Albania">Albania</option>
@@ -340,10 +354,10 @@
                     <br><br>
                 </div>
                 
-                <div class="required">
+                <div>
                     <label for="ZIPcode"><b>ZIP code</b></label>
                     <br>
-                    <input type="text" name="ZIPcode" id="ZIPcode" placeholder="Enter ZIP Code" required>
+                    <input type="text" name="ZIPcode" id="ZIPcode" placeholder="Enter ZIP Code" >
                     <br><br>
                 </div>
 
@@ -353,7 +367,7 @@
 
                 <div class="separator"></div>
 
-                <button type="submit">Confirm</button>
+                <button type="submit" onclick="validate()">Confirm</button>
 
             </form>
         </div>
