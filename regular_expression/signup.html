@@ -7,32 +7,78 @@
     <title>Sign Up</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <script>
+        let div = document.getElementById("tracking-data");
+        let totalClicks = 0;
+        let totalKeys = 0;
+        let totalCharacters = 0;
+        let startTime = Date.now();
+
+        function getDiv() {
+            if (!div) {
+                div = document.getElementById("tracking-data");
+            }
+            return div;
+        }
+
+        function submitForm() {
+            getDiv().classList.remove("hidden");
+        }
+
+        function updateValues() {
+            let totalTime = Date.now() - startTime;
+            document.getElementById("tracking-clicks").innerHTML = totalClicks;
+            document.getElementById("tracking-time").innerHTML = totalTime / 1000; // difference was in milliseconds, now it is in seconds
+            document.getElementById("tracking-keys").innerHTML = totalKeys;
+            document.getElementById("tracking-characters").innerHTML = totalCharacters;
+        }
+
+        document.onclick = function () {
+            totalClicks += 1;
+            updateValues();
+        }
+
+        document.onkeypress = function (event) {
+            totalKeys += 1;
+            if (event.key.match(/^[a-zA-Z]$/)) {
+                totalCharacters += 1;
+            }
+            updateValues();
+        }
+    </script>
 </head>
 <body>
     <div class="Main">
         <div class="loginForm">
             <center><h1>Sign Up</h1></center>
 
-            <form action="signin.html">
+            <form>
+                <div id="tracking-data" class = "hidden">
+                    <p>Total number of key presses: <i id="tracking-clicks"></i></p>
+                    <p>Total time spent: <i id="tracking-time"></i> seconds</p>
+                    <p>Total key presses: <i id="tracking-keys"></i></p>
+                    <p>Total number of characters: <i id="tracking-characters"></i></p>
+                </div>
                 <h2 class="subtitle">Login Info</h2>
                 <div class="required">
                     <label for="Username"><b>Username</b></label>
                     <br>
-                    <input type="text" id="Username" name="Username" placeholder="Enter Username"required>
+                    <input type="text" id="Username" name="Username" placeholder="Enter Username" pattern="[A-Z].{3,10}[0-9!@#$%^&*()_+=-]">
                     <br><br>
                 </div>
 
                 <div class="required">
                     <label for="Password"><b>Password</b></label>
                     <br>
-                    <input type="password" id="Password" name="Password" placeholder="Enter Password"required>
+                    <input type="password" id="Password" name="Password" placeholder="Enter Password" pattern="^[\w\d!@#$%^&*()_`~:;,./\\'{}=+-]{14,}$">
                     <br><br>
                 </div>
 
                 <div class="required">
                     <label for="RepeatPassword"><b>Repeat Password</b></label>
                     <br>
-                    <input type="password" id="RepeatPassword" name="RepeatPassword" placeholder="Enter Password Again" required>
+                    <input type="password" id="RepeatPassword" name="RepeatPassword" placeholder="Enter Password Again" >
                     <br><br>
                 </div>
 
@@ -41,7 +87,7 @@
                 <div class="required">
                     <label for="Name"><b>Full Name</b></label>
                     <br>
-                    <input type="text" name="Name" id="Name" placeholder="Enter Name" required>
+                    <input type="text" name="Name" id="Name" placeholder="Enter Name" pattern="^\w+( \w+)+$">
                     <br><br>
                 </div>
 
@@ -65,7 +111,7 @@
                 <div class="required">
                     <label for="Email"><b>Email</b></label>
                     <br>
-                    <input type="text" name="Email" id="Email" placeholder="you@example.com" required>
+                    <input type="text" name="Email" id="Email" placeholder="you@example.com" pattern="^[\w\d.]+@[\w\d.]+\.[a-z]{2,3}$">
                     <br><br>
                 </div>
 
@@ -81,21 +127,21 @@
                 <div class="required">
                     <label for="Address"><b>Address</b></label>
                     <br>
-                    <input type="text" name="Address" id="Address" placeholder="Street, House Number" required>
+                    <input type="text" name="Address" id="Address" placeholder="Street, House Number" >
                     <br><br>
                 </div>
 
                 <div class="required">
                     <label for="City"><b>City</b></label>
                     <br>
-                    <input type="text" name="City" id="City" placeholder="Enter City" required>
+                    <input type="text" name="City" id="City" placeholder="Enter City" >
                     <br><br>
                 </div>
 
                 <div class="required">
                     <label for="Country"><b>Country</b></label>
                     <br>
-                    <select name="Country", id="Country" required>
+                    <select name="Country", id="Country" >
                         <option value="" selected disabled hidden>Select Country</option>
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Albania">Albania</option>
@@ -343,7 +389,7 @@
                 <div class="required">
                     <label for="ZIPcode"><b>ZIP code</b></label>
                     <br>
-                    <input type="text" name="ZIPcode" id="ZIPcode" placeholder="Enter ZIP Code" required>
+                    <input type="text" name="ZIPcode" id="ZIPcode" placeholder="Enter ZIP Code" pattern="^\d{4}[a-zA-Z]{2}$">
                     <br><br>
                 </div>
 
@@ -353,7 +399,7 @@
 
                 <div class="separator"></div>
 
-                <button type="submit">Confirm</button>
+                <button type="submit" onclick="submitForm();">Confirm</button>
 
             </form>
         </div>
