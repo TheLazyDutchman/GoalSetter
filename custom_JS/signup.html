@@ -7,47 +7,33 @@
     <title>Sign Up</title>
 
     <link rel="stylesheet" href="style.css">
-
-    <script>
-        function validate() {
-            //Username:
-            let Username = document.getElementsByName("Username").value;
-            let Password = document.getElementsByName("Password").value;
-            let RepeatPassword = document.getElementsByName("RepeatPassword").value;
-            let Name = document.getElementsByName("Name").value;
-            let Gender = document.getElementsByName("Gender").value;
-            let Email = document.getElementsByName("Email").value;
-            let RepeatPassword = document.getElementsByName("RepeatPassword").value;
-            let RepeatPassword = document.getElementsByName("RepeatPassword").value;
-        }
-    </script>
 </head>
 <body>
     <div class="Main">
         <div class="loginForm">
             <center><h1>Sign Up</h1></center>
 
-            <form action="signin.html" >
+            <form action="signin.html" id="form">
                 <h2 class="subtitle">Login Info</h2>
                 <div class="required">
                     <label for="Username"><b>Username</b></label>
                     <br>
                     <input type="text" id="Username" name="Username" placeholder="Enter Username">
-                    <br><br>
+                    <div id="errorUsername"></div><br>
                 </div>
 
                 <div class="required">
                     <label for="Password"><b>Password</b></label>
                     <br>
                     <input type="password" id="Password" name="Password" placeholder="Enter Password">
-                    <br><br>
+                    <div id="errorPassword"></div><br>
                 </div>
 
                 <div class="required">
                     <label for="RepeatPassword"><b>Repeat Password</b></label>
                     <br>
                     <input type="password" id="RepeatPassword" name="RepeatPassword" placeholder="Enter Password Again" >
-                    <br><br>
+                    <div id="errorRePassword"></div><br>
                 </div>
 
                 <h2 class="subtitle">Personal Info</h2>
@@ -56,13 +42,13 @@
                     <label for="Name"><b>Full Name</b></label>
                     <br>
                     <input type="text" name="Name" id="Name" placeholder="Enter Name" >
-                    <br><br>
+                    <div id="errorName"></div><br>
                 </div>
 
                 <div class="required">
                     <label for="Gender"><b>Gender</b></label>
                     <br>
-                    <div class="Radio">
+                    <div id="GenderContainer" class="Radio">
                         <label for="Male">
                             <input type="radio" name="Gender" id="Male" value="Male">Male
                         </label>
@@ -73,14 +59,14 @@
                             <input type="radio" name="Gender" id="Other" value="Other">Other
                         </label>
                     </div>
-                    <br>
+                    <div id="errorGender"></div><br>
                 </div>
 
                 <div class="required">
                     <label for="Lang"><b>Language</b></label>
                     <br>
                     <select id="Lang" name="Lang" required>
-                        <option>Select Language</option>
+                        <option value="">Select Language</option>
                         <option value="af">Afrikaans</option>
                         <option value="sq">Albanian - shqip</option>
                         <option value="am">Amharic - አማርኛ</option>
@@ -224,21 +210,21 @@
                         <option value="yo">Yoruba - Èdè Yorùbá</option>
                         <option value="zu">Zulu - isiZulu</option>
                     </select>
-                    <br><br>
+                    <div id="errorLang"></div><br>
                 </div>
 
                 <div class="required">
                     <label for="Email"><b>Email</b></label>
                     <br>
                     <input type="text" name="Email" id="Email" placeholder="you@example.com" >
-                    <br><br>
+                    <div id="errorEmail"></div><br>
                 </div>
 
                 <div>
                     <label for="Bio"><b>Bio</b></label>
                     <br>
                     <textarea name="Bio" id="Bio" clos="50" rows="4" placeholder="Write something about youself..."></textarea>
-                    <br><br>
+                    <div></div><br>
                 </div>
 
                 <h2 class="subtitle">Address</h2>
@@ -247,14 +233,14 @@
                     <label for="Address"><b>Address</b></label>
                     <br>
                     <input type="text" name="Address" id="Address" placeholder="Street, House Number" >
-                    <br><br>
+                    <div></div><br>
                 </div>
 
                 <div>
                     <label for="City"><b>City</b></label>
                     <br>
                     <input type="text" name="City" id="City" placeholder="Enter City" >
-                    <br><br>
+                    <div></div><br>
                 </div>
 
                 <div class="required">
@@ -502,14 +488,14 @@
                     <option value="Zambia">Zambia</option>
                     <option value="Zimbabwe">Zimbabwe</option>
                     </select>
-                    <br><br>
+                    <div id="errorCountry"></div><br>
                 </div>
                 
                 <div>
                     <label for="ZIPcode"><b>ZIP code</b></label>
                     <br>
                     <input type="text" name="ZIPcode" id="ZIPcode" placeholder="Enter ZIP Code" >
-                    <br><br>
+                    <div id="errorZip"></div><br>
                 </div>
 
                 <br>
@@ -518,10 +504,11 @@
 
                 <div class="separator"></div>
 
-                <button type="submit" onclick="validate()">Confirm</button>
+                <button type="submit" onclick="return val();">Confirm</button>
 
             </form>
         </div>
     </div>
+    <script src="signup_validate.js"></script>
 </body>
 </html>
