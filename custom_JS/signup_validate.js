@@ -47,8 +47,7 @@ function ValidCountry() {
 
 function ValidZip() {
     const zipRegExp = /^\d{4}[a-zA-Z]{2}$/;
-    if (zip.value.length != 0) return zipRegExp.test(zip.value);
-    return true;
+    return zipRegExp.test(zip.value);
 }
 
 
@@ -182,8 +181,7 @@ function val() {
     } else {
         zip.className = "valid";
         error.className = "errorValid";
-        error.textContent = "";
-        if (zip.value.length != 0) error.textContent = "All Good!";
+        error.textContent = "All Good!";
     } 
 
     return ret;
