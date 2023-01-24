@@ -184,5 +184,20 @@ function val() {
         error.textContent = "All Good!";
     } 
 
+    if (ret) {
+        alert(
+            "Username: " + username.value + "\n" +
+            "Password: " + password.value + "\n" +
+            "Name: " + name.value + "\n" +
+            "Gender: " + document.querySelector( 'input[name="Gender"]:checked').value + "\n" +
+            "Language: " + lang.options[lang.selectedIndex].text + "\n" +
+            "Email: " + email.value + "\n" +
+            "Bio: " + document.getElementById("Bio").value + "\n" +
+            "Address: " + document.getElementById("Address").value + "\n" +
+            "City: " + document.getElementById("City").value + "\n" +
+            "Country: " + country.options[country.selectedIndex].text + "\n" +
+            "ZIp code: " + zip.value
+        );
+    }
     return ret;
 };
