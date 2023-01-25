@@ -9,23 +9,27 @@ const email = document.getElementById("Email");
 const country = document.getElementById("Country");
 const zip = document.getElementById("ZIPcode");
 
+// I did not check for patterns as that 
+// was done in the regular expression part
+// and would be done the same here.
+
 function ValidUsername() {
-    const usernameRegExp = /[A-Z].{3,10}[0-9!@#$%^&*()_+=-]/;
-    return usernameRegExp.test(username.value);
+    return username.value.length >= 5 
+        && username.value.length <= 12 
+        && username.value.charAt(0) === username.value.charAt(0).toUpperCase();
 }
 
 function ValidPassword() {
-    const passwordRegExp = /^[\w\d!@#$%^&*()_`~:;,./\\'{}=+-]{14,}$/;
-    return passwordRegExp.test(password.value);
+    return password.value.length >= 12;
 }
 
 function ValidRePassword() {
-    return repassword.value === password.value && repassword.value.length != 0;
+    return repassword.value === password.value 
+        && repassword.value.length != 0;
 }
 
 function ValidName() {
-    const nameRegExp = /^\w+( \w+)+$/;
-    return nameRegExp.test(name.value);
+    return name.value.length != 0;
 }
 
 function ValidGender() {
@@ -37,8 +41,7 @@ function ValidLang() {
 }
 
 function ValidEmail() {
-    const emailRegExp = /^[\w\d.]+@[\w\d.]+\.[a-z]{2,3}$/;
-    return emailRegExp.test(email.value);
+    return email.value.length != 0;
 }
 
 function ValidCountry() {
@@ -46,8 +49,7 @@ function ValidCountry() {
 }
 
 function ValidZip() {
-    const zipRegExp = /^\d{4}[a-zA-Z]{2}$/;
-    return zipRegExp.test(zip.value);
+    return zip.value.length === 6;
 }
 
 
