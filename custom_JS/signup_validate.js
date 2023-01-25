@@ -9,18 +9,79 @@ const email = document.getElementById("Email");
 const country = document.getElementById("Country");
 const zip = document.getElementById("ZIPcode");
 
-// I did not check for patterns as that 
-// was done in the regular expression part
-// and would be done the same here.
+const specialCharacters = [
+    "`", 
+    "!", 
+    "@", 
+    "#", 
+    "$", 
+    "%", 
+    "^", 
+    "&", 
+    "*", 
+    "(", 
+    ")", 
+    "_", 
+    "+", 
+    "-", 
+    "=", 
+    "[", 
+    "]", 
+    "{", 
+    "}", 
+    ";", 
+    "'", 
+    ":", 
+    '"',
+    "|", 
+    ",", 
+    ".", 
+    "<", 
+    ">", 
+    "\\", 
+    "/", 
+    "?", 
+    "~"
+]
 
 function ValidUsername() {
     return username.value.length >= 5 
-        && username.value.length <= 12 
-        && username.value.charAt(0) === username.value.charAt(0).toUpperCase();
+        && username.value.length <= 12
+        && username.value.charAt(0) === username.value.charAt(0).toUpperCase()
+        && (!isNaN(username.value.charAt(username.value.length - 1))
+        || specialCharacters.includes(username.value.charAt(username.value.length - 1)));
 }
 
 function ValidPassword() {
-    return password.value.length >= 12;
+    const len = password.value.length;
+    if (len < 12) return false;
+
+    var hasNum = false;
+    var hasSpecial = false;
+    var hasUpper = false;
+    var hasLower = false;
+
+    for (let i = 0; i < len; i++) {
+        var char = password.value.charAt(i);
+        console.log(char);
+        if (isNaN(char) === false) {
+            hasNum = true;
+        }
+        else if (specialCharacters.includes(char)) {
+            hasSpecial = true;
+        }
+        else if (char === char.toUpperCase()) {
+            hasUpper = true;
+        }
+        else if (char === char.toLowerCase()) {
+            hasLower = true;
+        }
+    }
+
+    return hasLower
+        && hasUpper
+        && hasSpecial
+        && hasNum;
 }
 
 function ValidRePassword() {
@@ -29,7 +90,13 @@ function ValidRePassword() {
 }
 
 function ValidName() {
-    return name.value.length != 0;
+    const len = name.value.length;
+    if (len === 0) return false;
+    for (let i = 0; i < len; i++) {
+        var char = name.value.charAt(i);
+        if (char.toLowerCase() === char.toUpperCase()) return false;
+    }
+    return true;
 }
 
 function ValidGender() {
@@ -41,7 +108,11 @@ function ValidLang() {
 }
 
 function ValidEmail() {
-    return email.value.length != 0;
+    var len = email.value.length;
+    if (len === 0) return false;
+    let x = email.value.indexOf("@");
+    let y = email.value.lastIndexOf(".");
+    return x > 0 && y > x && y < len -2;
 }
 
 function ValidCountry() {
@@ -49,7 +120,17 @@ function ValidCountry() {
 }
 
 function ValidZip() {
-    return zip.value.length === 6;
+    let len = zip.value.length;
+    if (len != 6) return false;
+    for (let i = 0; i < len; i++) {
+        let char = zip.value.charAt(i);
+        if (i < 4) {
+            if (isNaN(char)) return false;
+        } else {
+            if (char.toLowerCase() === char.toUpperCase()) return false;
+        }
+    }
+    return true;
 }
 
 
@@ -60,7 +141,7 @@ function val() {
     var error = document.getElementById("errorUsername");
     if (!isValid) {
         username.className = "invalid";
-        error.textContent = "Invalid email!";
+        error.textContent = "Must begin with uppercase and end with number or special character!";
         error.className = "errorInvalid";
         ret = false;
     } else {
@@ -68,19 +149,6 @@ function val() {
         error.className = "errorValid";
         error.textContent = "All Good!";
     }
-
-    isValid = ValidPassword();
-    var error = document.getElementById("errorPassword");
-    if (!isValid) {
-        password.className = "invalid";
-        error.className = "errorInvalid";
-        error.textContent = "Must contain uppercase, lowercase, number, special character, & be 12 characters long";
-        ret = false;
-    } else {
-        password.className = "valid";
-        error.className = "errorValid";
-        error.textContent = "All Good!";
-    } 
 
     isValid = ValidPassword();
     var error = document.getElementById("errorPassword");
@@ -201,5 +269,6 @@ function val() {
             "ZIp code: " + zip.value
         );
     }
+
     return ret;
 };
